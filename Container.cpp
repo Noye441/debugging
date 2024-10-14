@@ -1,5 +1,6 @@
 #include "Container.h"
 #include <iostream>
+#include <cassert>  // Ensure assert is included for index checking
 
 // Constructor: Allocates a dynamic array and initializes default values
 FloatArray::FloatArray(int maxSize) : maxValues(maxSize), numValues(0) {
@@ -52,11 +53,12 @@ void FloatArray::push_back(float value) {
     data[numValues++] = value; // Add value and increment numValues
 }
 
-float FloatArray::getValue(int index){
-    assert( index >=0 && index < size());   //HERE 
-    return data[index];
+// Gets the value at the specified index
+float FloatArray::getValue(int index) {
+    assert(index >= 0 && index < size());  // Ensure index is within bounds
+    return data[index];  // Return the value at the given index
+}
 
-    
 // Prints all the array values to the console in one line
 void FloatArray::print() const {
     for (int i = 0; i < numValues; i++) {

@@ -53,6 +53,7 @@ public:
     // Time Complexity: O(n), where n is numValues
     // Memory Handling: No additional memory is allocated; it just accesses the existing data.
     void print() const;
+    float getValue(int index);
 };
 
 #endif
